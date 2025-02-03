@@ -6,106 +6,110 @@
     <title>AMOZ THE GOAT</title>
     <style>
         body {
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    background: linear-gradient(45deg, #ff6b6b, #1e90ff);
-    color: white;
-    padding: 20px;
-}
-h1 {
-    font-size: 3em;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-img {
-    width: 300px;
-    height: auto;
-    border-radius: 15px;
-    transition: transform 0.3s ease;
-}
-img:hover {
-    transform: scale(1.1) rotate(5deg);
-}
-p {
-    font-size: 1.2em;
-}
-footer {
-    margin-top: 20px;
-    font-weight: bold;
-}
-.glow {
-    animation: glow 1.5s infinite alternate;
-}
-@keyframes glow {
-    from {
-        text-shadow: 0 0 10px #fff, 0 0 20px #ff6b6b, 0 0 30px #1e90ff;
-    }
-    to {
-        text-shadow: 0 0 20px #fff, 0 0 30px #ff6b6b, 0 0 40px #1e90ff;
-    }
-}
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(45deg, #ff6b6b, #1e90ff);
+            color: white;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        img {
+            width: 300px;
+            height: auto;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+        img:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+        p {
+            font-size: 1.2em;
+        }
+        footer {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .glow {
+            animation: glow 1.5s infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #ff6b6b, 0 0 30px #1e90ff;
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #ff6b6b, 0 0 40px #1e90ff;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>AMOZ THE GOAT</h1>
-        <img src="images/Main cover.png" alt="Image of amos the goat-main cover">
+        <img id="mainImg" src="images/Main cover.png" alt="Image of amos the goat-main cover"> <!-- FIXED: Added id="mainImg" -->
         <p>AMOZ THE GOAT is a music artist from the United States. 
             He is known for his unique style of music and his ability to connect with his fans. 
-            AMOZ THE GOAT has released several albums and singles, and has gained a large following on s
-            ocial media. He is considered one of the most influential artists of his generation.</p>
-<img src="images/Secondary.png" alt="profile image of amos">
-<p>AMOZ THE GOAT Knows how to make woman feel special. He is a great lover and knows how to strum the right cords.
-    Breaks G strings constantly though...</p>
-    <img src="images/Thirdly.png" alt="profile image of amos">
-    <p>This guy served in the military as a sea man, he has mastered the culenary art, and has been given
-        a certification in the mastery of bating fish.
-    </p>
-    <img src="images/Secondary cover.png" alt="profile image of amos">
-    <p>AMOS THE GOAT knows how the world works and better yet, how finances work. He has brokered over $1.2
-        billion in deals with Goldman Sachs and has been featured in Forbes magazine as one of the top 30 under 30.
-    </p>
-    <h1>HE IS NOT AA FORCE TO BE RECONED WITH.</h1>
+            AMOZ THE GOAT has released several albums and singles, and has gained a large following on 
+            social media. He is considered one of the most influential artists of his generation.</p>
+        <img src="images/Secondary.png" alt="profile image of amos">
+        <p>AMOZ THE GOAT Knows how to make women feel special. He is a great lover and knows how to strum the right chords.
+            Breaks G strings constantly though...</p>
+        <img src="images/Thirdly.png" alt="profile image of amos">
+        <p>This guy served in the military as a seaman, he has mastered the culinary art, and has been given
+            a certification in the mastery of baiting fish.
+        </p>
+        <img src="images/Secondary cover.png" alt="profile image of amos">
+        <p>AMOS THE GOAT knows how the world works and better yet, how finances work. He has brokered over $1.2
+            billion in deals with Goldman Sachs and has been featured in Forbes magazine as one of the top 30 under 30.
+        </p>
+        <h1>HE IS NOT A FORCE TO BE RECKONED WITH.</h1>
+    </header> <!-- FIXED: Moved closing </header> tag above the footer -->
     <footer>
         <ul>GOAT AMOS</ul>
         <p>AMOZ THE GOAT</p>
         <p>AMOZ THE GOAT &copy; 2021</p>
     </footer>
-    </header>
-    <script>
-    document.getElementById("mainImg").addEventListener("click", function() {
-        celebrate();
-        this.src = "images/Secondary.png";
-        this.style.border = "5px solid gold";
-    });
-    function celebrate() {
-        const confettiContainer = document.createElement("div");
-        confettiContainer.style.position = "fixed";
-        confettiContainer.style.top = "0";
-        confettiContainer.style.left = "0";
-        confettiContainer.style.width = "100%";
-        confettiContainer.style.height = "100%";
-        confettiContainer.style.pointerEvents = "none";
-        confettiContainer.style.overflow = "hidden";
-        document.body.appendChild(confettiContainer);
-    
-    for (let i = 0; i < 100; i++) {
-        let confetti = document.createElement("div");
-        confetti.style.position = "absolute";
-        confetti.style.width = "10px";
-        confetti.style.height = "10px";
-        confetti.style.background = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
-        confetti.style.left = Math.random() * 100 + "%";
-        confetti.style.top = Math.random() * 100 + "%";
-        confetti.style.opacity = "0.8";
-        confetti.style.transform = "rotate(" + Math.random() * 360 + "deg)";
-        confetti.style.animation = "fall 2s linear infinite";
-        confettiContainer.appendChild(confetti);
-    }
-    
-    setTimeout(() => { confettiContainer.remove(); }, 3000);
-}
 
-document.body.insertAdjacentHTML("beforeend", "<style>@keyframes fall { from { transform: translateY(0); } to { transform: translateY(100vh); }}</style>");
+    <script>
+        window.onload = function() { // FIXED: Wrapped in window.onload
+            document.getElementById("mainImg").addEventListener("click", function() {
+                celebrate();
+                this.src = "images/Secondary.png";
+                this.style.border = "5px solid gold";
+            });
+        };
+
+        function celebrate() {
+            const confettiContainer = document.createElement("div");
+            confettiContainer.style.position = "fixed";
+            confettiContainer.style.top = "0";
+            confettiContainer.style.left = "0";
+            confettiContainer.style.width = "100%";
+            confettiContainer.style.height = "100%";
+            confettiContainer.style.pointerEvents = "none";
+            confettiContainer.style.overflow = "hidden";
+            document.body.appendChild(confettiContainer);
+        
+            for (let i = 0; i < 100; i++) {
+                let confetti = document.createElement("div");
+                confetti.style.position = "absolute";
+                confetti.style.width = "10px";
+                confetti.style.height = "10px";
+                confetti.style.background = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+                confetti.style.left = Math.random() * 100 + "%";
+                confetti.style.top = Math.random() * 100 + "%";
+                confetti.style.opacity = "0.8";
+                confetti.style.transform = "rotate(" + Math.random() * 360 + "deg)";
+                confetti.style.animation = "fall 2s linear infinite";
+                confettiContainer.appendChild(confetti);
+            }
+        
+            setTimeout(() => { confettiContainer.remove(); }, 3000);
+        }
+
+        document.body.insertAdjacentHTML("beforeend", "<style>@keyframes fall { from { transform: translateY(0); } to { transform: translateY(100vh); }}</style>");
     </script>
 </body>
 </html>
