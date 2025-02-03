@@ -3,9 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="stylejs.js">
     <title>AMOZ THE GOAT</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background: linear-gradient(45deg, #ff6b6b, #1e90ff);
+    color: white;
+    padding: 20px;
+}
+h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+img {
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+p {
+    font-size: 1.2em;
+}
+footer {
+    margin-top: 20px;
+    font-weight: bold;
+}
+.glow {
+    animation: glow 1.5s infinite alternate;
+}
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff6b6b, 0 0 30px #1e90ff;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff6b6b, 0 0 40px #1e90ff;
+    }
+}
+    </style>
 </head>
 <body>
     <header>
@@ -33,5 +71,41 @@
         <p>AMOZ THE GOAT &copy; 2021</p>
     </footer>
     </header>
+    <script>
+    document.getElementById("mainImg").addEventListener("click", function() {
+        celebrate();
+        this.src = "images/Secondary.png";
+        this.style.border = "5px solid gold";
+    });
+    function celebrate() {
+        const confettiContainer = document.createElement("div");
+        confettiContainer.style.position = "fixed";
+        confettiContainer.style.top = "0";
+        confettiContainer.style.left = "0";
+        confettiContainer.style.width = "100%";
+        confettiContainer.style.height = "100%";
+        confettiContainer.style.pointerEvents = "none";
+        confettiContainer.style.overflow = "hidden";
+        document.body.appendChild(confettiContainer);
+    
+    for (let i = 0; i < 100; i++) {
+        let confetti = document.createElement("div");
+        confetti.style.position = "absolute";
+        confetti.style.width = "10px";
+        confetti.style.height = "10px";
+        confetti.style.background = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+        confetti.style.left = Math.random() * 100 + "%";
+        confetti.style.top = Math.random() * 100 + "%";
+        confetti.style.opacity = "0.8";
+        confetti.style.transform = "rotate(" + Math.random() * 360 + "deg)";
+        confetti.style.animation = "fall 2s linear infinite";
+        confettiContainer.appendChild(confetti);
+    }
+    
+    setTimeout(() => { confettiContainer.remove(); }, 3000);
+}
+
+document.body.insertAdjacentHTML("beforeend", "<style>@keyframes fall { from { transform: translateY(0); } to { transform: translateY(100vh); }}</style>");
+    </script>
 </body>
 </html>
